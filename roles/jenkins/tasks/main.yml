@@ -1,0 +1,11 @@
+- name: create multicbranch pipeline
+  ansible.builtin.include_tasks:
+    file: mjobs.xml
+  loop: "{{ mjobs }}"
+
+
+
+- name: create single branch pipeline
+  ansible.builtin.include_tasks:
+    file: sjobs.xml
+  loop: "{{ sjobs }}"
